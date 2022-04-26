@@ -99,14 +99,14 @@ class Portfolio extends React.Component {
 
   render() {
     return (
-      <div className="portfolio">
+      <main className="portfolio">
         <Toolbar
           filters={this.state.filters}
           selected={this.state.selected}
           onSelectFilter={this.onSelectFilter}
         />
         <ProjectList projects={this.state.projects} />
-      </div>
+      </main>
     );
   }
 }

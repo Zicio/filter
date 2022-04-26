@@ -5,14 +5,17 @@ const Toolbar = (props) => {
   const onClickFilter = (e) => onSelectFilter(e);
 
   return (
-    <div className="tool-bar">
+    <div className="portfolio__tool-bar">
       {filters.map((filter, index) => {
         const classes =
-          filter === selected && filter !== "All"
-            ? classNames("button", "selected")
-            : "button";
+          filter === selected ? classNames("filter", "selected") : "filter";
         return (
-          <button className={classes} key={index} onClick={onClickFilter}>
+          <button
+            className={classes}
+            key={index}
+            onClick={onClickFilter}
+            type="button"
+          >
             {filter}
           </button>
         );
