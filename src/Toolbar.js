@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const Toolbar = (props) => {
   const { selected, filters, onSelectFilter } = props;
@@ -22,6 +23,12 @@ const Toolbar = (props) => {
       })}
     </div>
   );
+};
+
+Toolbar.propTypes = {
+  selected: PropTypes.string.isRequired,
+  filters: PropTypes.array.isRequired,
+  onSelectFilter: PropTypes.func.isRequired,
 };
 
 export default Toolbar;
