@@ -86,13 +86,13 @@ class Portfolio extends React.Component {
     ];
   };
 
-  onSelectFilter = (e) => {
-    const filter = e.target.textContent;
-    console.log("Выбранный фильтр", filter);
-    this.setState({ selected: filter });
+  onSelectFilter = (filter) => {
+    const activeFilter = filter;
+    console.log("Выбранный фильтр", activeFilter);
+    this.setState({ selected: activeFilter });
     let arr = this.projectsArr();
-    if (filter !== "All") {
-      arr = arr.filter((p) => p.category === filter);
+    if (activeFilter !== "All") {
+      arr = arr.filter((p) => p.category === activeFilter);
     }
     this.setState({ projects: arr });
   };

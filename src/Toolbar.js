@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Toolbar = (props) => {
   const { selected, filters, onSelectFilter } = props;
-  const onClickFilter = (e) => onSelectFilter(e);
+  const onClickFilter = (filter) => onSelectFilter(filter);
 
   return (
     <div className="portfolio__tool-bar">
@@ -14,7 +14,7 @@ const Toolbar = (props) => {
           <button
             className={classes}
             key={index}
-            onClick={onClickFilter}
+            onClick={() => onClickFilter(filter)}
             type="button"
           >
             {filter}
